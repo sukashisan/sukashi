@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>すかし｜Sukashi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body{
+      font-family: "Yu Gothic", YuGothic;
+      margin: 0;
+      background: #e8e8e8;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    main{
+      max-width:1080px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+      color: #404040;
+    }
+
+    /* ▼ h2 だけ明朝体にする */
+    .mincho{
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+    }
+
+    @media (max-width: 768px) {      
+      .info-layout { grid-template-columns: 1fr; }
+      .info-item {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.3em;
+      }
+      .info-item div {
+        width: 100%;
+        word-break: break-word;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .footer-bottom {
+        text-align: center;
+        margin-top: 8px;
+        color: #ffffff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <!-- すかす -->
+  <section aria-labelledby="info-title">
+    <div class="info-header">
+      <h1 class="mincho">すかす</h1>
+    </div>
+
+    <div class="info-layout">
+      <div class="info-list">
+        <ul>
+          <li>（新明解国語辞典）<br>きどる。すます。＜東京・神奈川方言＞</li>
+          <li>（デジタル大辞泉）<br>すまし込む。気取る。</li>
+          <li>（明鏡国語辞典）<br>気取る。すます。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- stuck up -->
+    <div class="info-header">
+      <h1 class="mincho">stuck up</h1>
+    </div>
+
+    <div class="info-layout">
+      <div class="info-list">
+        <ul>
+          <li>（ジーニアス英和辞典）<br>高慢な、うぬぼれた、お高くとまった</li>
+          <li>（オーレックス英和辞典）<br>お高くとまった、生意気な</li>
+          <li>（ウィズダム英和辞典）<br>高慢ちきな、うぬぼれた</li>
+          <li>（ロングマン英英辞典）<br>
+            proud and unfriendly because you think you are better and more important than other people<br>
+            ━自分が他人よりもすばらしく尊いものであると思いあがったために、高慢で友好的でない様子
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 音声 -->
+  <audio id="bgm" src="audio.m4a" autoplay muted playsinline></audio>
+
+</main>
+
+<!-- ▼ ミュート解除＋再生強制 -->
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("bgm");
+  audio.muted = false;
+  audio.play().catch(err => {
+    console.log("自動再生がブロックされました:", err);
+  });
+});
+</script>
+
+</body>
+</html>
